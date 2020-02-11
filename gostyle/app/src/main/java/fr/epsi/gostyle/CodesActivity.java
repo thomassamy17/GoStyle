@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import fr.epsi.gostyle.controller.SharedPrefManager;
+
 public class CodesActivity extends GostyleActivity {
 
     public static void display(Activity activity){
@@ -20,7 +22,9 @@ public class CodesActivity extends GostyleActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codes);
-        showBackButton();
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            ConnectActivity.display(CodesActivity.this);
+        }
         showAccountButton();
         ImageView image = findViewById(R.id.imageViewCamera);
         image.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +34,7 @@ public class CodesActivity extends GostyleActivity {
                 startActivity(intent);
             }
         });
+
     }
 
 }

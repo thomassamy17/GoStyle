@@ -42,7 +42,7 @@
 
     <Button
         android:id="@+id/buttonDeco"
-        android:text="Deconnection"
+        android:text="deconnexion"
         android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
