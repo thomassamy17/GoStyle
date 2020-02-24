@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -76,7 +78,10 @@ public class QRCodeActivity extends GostyleActivity {
                         public void run() {
                             Vibrator vibrator = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
-                            textView.setText(qrcodes.valueAt(0).displayValue);
+                            Intent resultIntent = new Intent();
+                            resultIntent.putExtra("code", qrcodes.valueAt(0).displayValue);
+                            setResult(Activity.RESULT_OK, resultIntent);
+                            finish();
                         }
                     });
                 }

@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-    <activity android:name=".AccountActivity"></activity>
+        <activity android:name=".CodeDetailsActivity"></activity>
+        <activity android:name=".AccountActivity" />
         <activity android:name=".QRCodeActivity" />
         <activity android:name=".CodesActivity" />
         <activity android:name=".ConnectActivity" />

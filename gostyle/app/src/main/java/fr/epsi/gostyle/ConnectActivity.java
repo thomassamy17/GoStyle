@@ -44,6 +44,7 @@ public class ConnectActivity extends GostyleActivity{
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(ConnectActivity.this,"Connexion...",Toast.LENGTH_SHORT).show();
                 userLogin();
             }
         });

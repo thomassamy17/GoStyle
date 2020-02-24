@@ -49,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="5dp"
+                android:inputType="textPassword"
                 android:background="@drawable/input_text"
                 android:padding="5dp" />
 

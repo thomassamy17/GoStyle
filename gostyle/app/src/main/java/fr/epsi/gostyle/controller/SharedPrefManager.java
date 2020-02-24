@@ -7,7 +7,6 @@ import fr.epsi.gostyle.model.User;
 
 public class SharedPrefManager {
 
-    //the constants
     public static final String SHARED_PREF_NAME = "sharedPreferencesLoginAccountGoStyle";
     private static final String KEY_EMAIL = "keyemail";
     private static final String KEY_NAME = "keyname";
@@ -54,7 +53,4 @@ public class SharedPrefManager {
         );
     }
 
-    public void logout() {
-
-    }
 }
