@@ -2,24 +2,26 @@ package fr.epsi.gostyle.model;
 
 import org.json.JSONObject;
 
-public class Promo {
+import java.io.Serializable;
+
+public class Promo implements Serializable {
 
        private int id;
        private int rate;
        private String item_name;
        private String code;
        private int utilisation_max;
-       private String date_debut_validite;
        private String date_fin_validite;
+       private int nb_utilisation;
 
-    public Promo(int id, int rate, String item_name, String code, int utilisation_max, String date_debut_validite, String date_fin_validite) {
+    public Promo(int id, int rate, String item_name, String code, int utilisation_max, String date_fin_validite, int nb_utilisation) {
         this.id = id;
         this.rate = rate;
         this.item_name = item_name;
         this.code = code;
         this.utilisation_max = utilisation_max;
-        this.date_debut_validite = date_debut_validite;
         this.date_fin_validite = date_fin_validite;
+        this.nb_utilisation = nb_utilisation;
     }
 
     public Promo(JSONObject jsonObject){
@@ -28,8 +30,8 @@ public class Promo {
         this.item_name = jsonObject.optString("item_name");
         this.code = jsonObject.optString("code");
         this.utilisation_max = jsonObject.optInt("utilisation_max");
-        this.date_debut_validite = jsonObject.optString("date_debut_validite");
         this.date_fin_validite = jsonObject.optString("date_fin_validite");
+        this.nb_utilisation = jsonObject.optInt("nb_utilisation");
     }
 
     public int getId() {
@@ -42,10 +44,6 @@ public class Promo {
 
     public int getRate() {
         return rate;
-    }
-
-    public void setRate(int rate) {
-        this.rate = rate;
     }
 
     public String getItem_name() {
@@ -72,14 +70,6 @@ public class Promo {
         this.utilisation_max = utilisation_max;
     }
 
-    public String getDate_debut_validite() {
-        return date_debut_validite;
-    }
-
-    public void setDate_debut_validite(String date_debut_validite) {
-        this.date_debut_validite = date_debut_validite;
-    }
-
     public String getDate_fin_validite() {
         return date_fin_validite;
     }
@@ -87,4 +77,9 @@ public class Promo {
     public void setDate_fin_validite(String date_fin_validite) {
         this.date_fin_validite = date_fin_validite;
     }
+
+    public int getNb_utilisation() {
+        return nb_utilisation;
+    }
+
 }

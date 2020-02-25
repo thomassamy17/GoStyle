@@ -31,7 +31,7 @@ import fr.epsi.gostyle.model.User;
 
 public class CodesActivity extends GostyleActivity {
 
-    private ArrayList<Promo> promos;
+    protected ArrayList<Promo> promos;
     private PromosAdapter adapter;
 
     public static void display(Activity activity){
@@ -80,6 +80,10 @@ public class CodesActivity extends GostyleActivity {
             if(resultCode == RESULT_OK) {
                 discountScan(data.getStringExtra("code"));
             }
+        }else if (requestCode == 20){
+            if(resultCode == RESULT_OK) {
+                getPromos();
+            }
         }
     }
 
@@ -103,6 +107,7 @@ public class CodesActivity extends GostyleActivity {
                     JSONObject obj = new JSONObject(s);
 
                     if (!obj.getBoolean("error")) {
+
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                         JSONObject promoJson = obj.getJSONObject("promo");
@@ -113,8 +118,8 @@ public class CodesActivity extends GostyleActivity {
                                 promoJson.getString("item_name"),
                                 promoJson.getString("code"),
                                 promoJson.getInt("utilisation_max"),
-                                promoJson.getString("date_debut_validite"),
-                                promoJson.getString("date_fin_validite")
+                                promoJson.getString("date_fin_validite"),
+                                promoJson.getInt("nb_utilisation")
                         );
                         promos.add(promo);
                         adapter.notifyDataSetChanged();
@@ -154,6 +159,8 @@ public class CodesActivity extends GostyleActivity {
 
             @Override
             protected void onPostExecute(String s) {
+                promos.clear();
+                adapter.notifyDataSetChanged();
                 super.onPostExecute(s);
                 try {
                     JSONObject obj = new JSONObject(s);
@@ -193,7 +200,7 @@ public class CodesActivity extends GostyleActivity {
                 Intent intent = new Intent(CodesActivity.this,QRCodeActivity.class);
                 startActivityForResult(intent,23);
             }
-            else {
+            else{
                 Toast.makeText(CodesActivity.this,"Permission annulée",Toast.LENGTH_SHORT).show();
             }
         }

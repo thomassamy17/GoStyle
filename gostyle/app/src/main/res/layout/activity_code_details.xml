@@ -21,13 +21,22 @@
             android:id="@+id/textCode"
             android:text=""
             android:textSize="20dp"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"/>
 
         <TextView
-            android:id="@+id/textDateExp"
-            android:text="Date d'expiration"
+            android:id="@+id/textRate"
+            android:text="Réduction :"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/textItems"
+            android:text="Produit(s) concerné(s) :"
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,17 +51,18 @@
             android:layout_margin="10dp"/>
 
         <TextView
-            android:id="@+id/textItems"
-            android:text="Produit(s) concerné(s) :"
+            android:id="@+id/textDateExp"
+            android:text="Date d'expiration"
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"/>
 
         <Button
-            android:id="@+id/buttonDeco"
+            android:id="@+id/buttonUse"
             android:text="Utiliser le code"
             android:padding="10dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"

@@ -25,12 +25,12 @@ public class PromosAdapter extends ArrayAdapter<Promo> {
 
         LayoutInflater li = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = li.inflate(R.layout.c_promo, null);
-
         TextView textViewName=convertView.findViewById(R.id.textViewReduction);
 
         Promo promo=getItem(position);
 
         textViewName.setText(promo.getCode());
+
         return convertView;
     }
 }

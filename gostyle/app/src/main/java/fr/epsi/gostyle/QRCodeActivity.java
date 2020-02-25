@@ -35,10 +35,6 @@ public class QRCodeActivity extends GostyleActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrcode);
         showBackButton();
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        {
-            requestPermissions(new String[] { Manifest.permission.CALL_PHONE }, 2);
-        }
         surfaceView = findViewById(R.id.cameraPreview);
         textView = findViewById(R.id.textResult);
         barcodeDetector = new BarcodeDetector.Builder(this).setBarcodeFormats(Barcode.QR_CODE).build();
