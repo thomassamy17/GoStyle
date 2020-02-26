@@ -1,5 +1,8 @@
 package fr.epsi.gostyle.model;
 
+/**
+ * Class User
+ */
 public class User {
 
     private int id;
@@ -7,6 +10,13 @@ public class User {
     private String firstname;
     private String name;
 
+    /**
+     * Constructeur
+     * @param id
+     * @param email
+     * @param firstname
+     * @param name
+     */
     public User(int id, String email, String firstname, String name) {
         this.id = id;
         this.email = email;

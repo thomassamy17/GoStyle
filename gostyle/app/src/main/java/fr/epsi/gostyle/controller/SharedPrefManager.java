@@ -28,6 +28,10 @@ public class SharedPrefManager {
     }
 
 
+    /**
+     * Methode d'enregistrement de l'utilisateur dans l'appli por garder la connexion active
+     * @param user
+     */
     public void userLogin(User user) {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -38,11 +42,19 @@ public class SharedPrefManager {
         editor.apply();
     }
 
+    /**
+     * Fonction pour savoir si il y a un utilisateur d'enregistrer dans l'appli
+     * @return boolean
+     */
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_EMAIL, null) != null;
     }
 
+    /**
+     * Fonction pour récuperer l'object User enregistrer dans l'appi
+     * @return User
+     */
     public User getUser() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return new User(

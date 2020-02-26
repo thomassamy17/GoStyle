@@ -2,6 +2,10 @@ package fr.epsi.gostyle.controller;
 
 public class URLs {
 
+    /**
+     * Class URLs
+     * Définition de constantes pour les différentes routes de l'API
+     */
     private static final String ROOT_URL = "https://gostyle-mspr.000webhostapp.com/api.php?apicall=";
 
     public static final String URL_LOGIN= ROOT_URL + "login";

@@ -5,8 +5,15 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Class GostyleActivity
+ * Les autres activités extends cette class pour récuperer les méthodes associées
+ */
 public class GostyleActivity extends AppCompatActivity {
 
+    /**
+     * Methode pour afficher le bouton retour
+     */
     protected void showBackButton(){
         ImageView backButton = findViewById(R.id.imageViewClose);
         if (backButton != null){
@@ -20,6 +27,9 @@ public class GostyleActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Methode pour afficher le bouton Compte
+     */
     protected void showAccountButton(){
         ImageView cameraButton = findViewById(R.id.imageViewAccount);
         if (cameraButton != null){

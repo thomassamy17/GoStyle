@@ -29,11 +29,19 @@ import fr.epsi.gostyle.controller.URLs;
 import fr.epsi.gostyle.model.Promo;
 import fr.epsi.gostyle.model.User;
 
+/**
+ * Class CodesActivity
+ * Vue liste des codes dans l'application
+ */
 public class CodesActivity extends GostyleActivity {
 
     protected ArrayList<Promo> promos;
     private PromosAdapter adapter;
 
+    /**
+     * Methode pour démarrer cette activté
+     * @param activity
+     */
     public static void display(Activity activity){
         Intent intent=new Intent(activity, CodesActivity.class);
         activity.startActivity(intent);
@@ -73,6 +81,12 @@ public class CodesActivity extends GostyleActivity {
         });
     }
 
+    /**
+     * Methode
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -87,9 +101,16 @@ public class CodesActivity extends GostyleActivity {
         }
     }
 
+    /**
+     * Methode pour recupérer l'objet Promo après le scan QrCode
+     * @param code
+     */
     private void discountScan(final String code) {
 
-
+        /**
+         * Class DiscountScan
+         * Class pour effectuer la requête vers l'API en asynchrone qui récupère la promo
+         */
         class DiscountScan extends AsyncTask<Void, Void, String> {
 
 
@@ -146,9 +167,15 @@ public class CodesActivity extends GostyleActivity {
         ds.execute();
     }
 
+    /**
+     * Methode pour recupérer les promos liées à l'utilisateur pour les afficher dans la liste
+     */
     private void getPromos() {
 
-
+        /**
+         * Class GetPromos
+         * Class pour effectuer la requête vers l'API en asynchrone qui récupère les promos
+         */
         class GetPromos extends AsyncTask<Void, Void, String> {
 
 
@@ -192,6 +219,12 @@ public class CodesActivity extends GostyleActivity {
         gp.execute();
     }
 
+    /**
+     * Methode pour demander la permissions de la CAMERA pour le scan
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     public void onRequestPermissionsResult(int requestCode,@NonNull String[] permissions,@NonNull int[] grantResults)
     {
         super.onRequestPermissionsResult(requestCode,permissions,grantResults);

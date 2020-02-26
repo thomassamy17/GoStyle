@@ -1,7 +1,5 @@
 package fr.epsi.gostyle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +11,18 @@ import android.widget.TextView;
 import fr.epsi.gostyle.controller.SharedPrefManager;
 import fr.epsi.gostyle.model.User;
 
+/**
+ * Class AccountActivity
+ * Vue Compte dans l'application
+ */
 public class AccountActivity extends GostyleActivity {
 
     TextView emailView, firstnameView, nameView;
 
+    /**
+     * Methode pour démarrer cette activté
+     * @param activity
+     */
     public static void display(Activity activity){
         Intent intent=new Intent(activity, AccountActivity.class);
         activity.startActivity(intent);

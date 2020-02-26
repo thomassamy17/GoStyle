@@ -14,6 +14,10 @@ import java.util.List;
 
 import fr.epsi.gostyle.model.Promo;
 
+/**
+ * Class PromosAdapter
+ * Adapter pour la liste des promos dans l'application
+ */
 public class PromosAdapter extends ArrayAdapter<Promo> {
     public PromosAdapter(@NonNull Context context, int resource, @NonNull List<Promo> objects) {
         super(context, resource, objects);

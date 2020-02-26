@@ -4,16 +4,29 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
+/**
+ * Class Promo
+ */
 public class Promo implements Serializable {
 
-       private int id;
-       private int rate;
-       private String item_name;
-       private String code;
-       private int utilisation_max;
-       private String date_fin_validite;
-       private int nb_utilisation;
+    private int id;
+    private int rate;
+    private String item_name;
+    private String code;
+    private int utilisation_max;
+    private String date_fin_validite;
+    private int nb_utilisation;
 
+    /**
+     * Constructeur
+     * @param id
+     * @param rate
+     * @param item_name
+     * @param code
+     * @param utilisation_max
+     * @param date_fin_validite
+     * @param nb_utilisation
+     */
     public Promo(int id, int rate, String item_name, String code, int utilisation_max, String date_fin_validite, int nb_utilisation) {
         this.id = id;
         this.rate = rate;
@@ -24,6 +37,10 @@ public class Promo implements Serializable {
         this.nb_utilisation = nb_utilisation;
     }
 
+    /**
+     * Constructeur qui prend un obejct JSON en paramètre
+     * @param jsonObject
+     */
     public Promo(JSONObject jsonObject){
         this.id = jsonObject.optInt("id");
         this.rate = jsonObject.optInt("rate");

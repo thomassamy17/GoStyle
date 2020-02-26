@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+/**
+ * Class SplashScneen
+ * Vue SplashScreen au démarage de l'application
+ */
 public class SplashScreen extends AppCompatActivity {
 
     private static final int SPLASH_TIME_OUT = 2000;

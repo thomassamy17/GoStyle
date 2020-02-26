@@ -20,10 +20,18 @@ import fr.epsi.gostyle.controller.URLs;
 import fr.epsi.gostyle.model.Promo;
 import fr.epsi.gostyle.model.User;
 
+/**
+ * Class CodeDetailsActivity
+ * Vue détails d'un code dans l'application
+ */
 public class CodeDetailsActivity extends GostyleActivity {
 
-    protected Promo promo;
+    private Promo promo;
 
+    /**
+     * Methode pour démarrer cette activté
+     * @param activity
+     */
     public static void display(Activity activity, Promo p){
         Intent intent=new Intent(activity,CodeDetailsActivity.class);
         intent.putExtra("promo",p);
@@ -48,7 +56,7 @@ public class CodeDetailsActivity extends GostyleActivity {
         textNbUtilisation.setText("Utilisation du code :"+promo.getNb_utilisation()+"/"+promo.getUtilisation_max());
         textItems.setText("Produit(s) concerné(s) : "+promo.getItem_name());
         textReduction.setText("Réductions : -"+promo.getRate()+"%");
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -73,8 +81,16 @@ public class CodeDetailsActivity extends GostyleActivity {
         });
     }
 
+    /**
+     * Methode pour ajouté une utilisation de la reduction
+     * @param promo
+     */
     private void ajoutUtilisation(final Promo promo) {
 
+        /**
+         * Class AjoutUtilisation
+         * Class pour effectuer la requête vers l'API en asynchrone
+         */
         class AjoutUtilisation extends AsyncTask<Void, Void, String> {
 
             @Override

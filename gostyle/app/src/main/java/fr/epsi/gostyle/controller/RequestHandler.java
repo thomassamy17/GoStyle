@@ -14,8 +14,18 @@ import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
+/**
+ * Class RequestHandler
+ * Class pour envoyer des requetes à l'API
+ */
 public class RequestHandler {
 
+    /**
+     * Methode pour envoyer la requete avec l'URL et les données en paramètres
+     * @param requestURL
+     * @param postDataParams
+     * @return
+     */
     public String sendPostRequest(String requestURL, HashMap<String, String> postDataParams) {
         URL url;
 
@@ -57,6 +67,12 @@ public class RequestHandler {
         return sb.toString();
     }
 
+    /**
+     * Methode qui recupère la réponse de l'API
+     * @param params
+     * @return
+     * @throws UnsupportedEncodingException
+     */
     private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();
         boolean first = true;

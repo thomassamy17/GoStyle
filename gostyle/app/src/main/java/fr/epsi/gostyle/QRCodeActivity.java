@@ -23,6 +23,10 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
+/**
+ * Class QRCodeActivity
+ * Vue Scanner de QRCode dans l'application
+ */
 public class QRCodeActivity extends GostyleActivity {
 
     SurfaceView surfaceView;
