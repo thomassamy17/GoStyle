@@ -88,7 +88,7 @@ function scan($code,$user_id,$pdo){
 
     if($s=$sql->fetch(PDO::FETCH_OBJ)) {
         $response['error'] = false;
-        $sql = $pdo->prepare("INSERT INTO user_discount values (:user_id,:promo_id,:)");
+        $sql = $pdo->prepare("INSERT INTO user_discount values (:user_id,:promo_id,0)");
         $sql->bindParam(':user_id', $user_id);
         $sql->bindParam(':promo_id', $s->id);
         $response['message'] = ($sql->execute()) ? 'Code promo ajouté' : 'Vous avez déjà scanner ce code';
@@ -98,7 +98,6 @@ function scan($code,$user_id,$pdo){
             'item_name'=>$s->item_name,
             'code'=>$s->code,
             'utilisation_max'=>$s->utilisation_max,
-            'date_debut_validite'=>$s->date_debut_validite,
             'date_fin_validite'=>$s->date_fin_validite
         );
     }else{
