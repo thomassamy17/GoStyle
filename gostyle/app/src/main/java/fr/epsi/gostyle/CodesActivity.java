@@ -140,7 +140,7 @@ public class CodesActivity extends GostyleActivity {
                                 promoJson.getString("code"),
                                 promoJson.getInt("utilisation_max"),
                                 promoJson.getString("date_fin_validite"),
-                                promoJson.getInt("nb_utilisation")
+                                0
                         );
                         promos.add(promo);
                         adapter.notifyDataSetChanged();
